@@ -43,3 +43,8 @@ El archivo `scripts/create_tables.sql` contiene todas las instrucciones necesari
 ## Versionado
 
 El proyecto se encuentra versionado con Git y alojado en GitHub, permitiendo llevar un seguimiento de los cambios realizados en el diseño de la base de datos.
+
+## Modificacion de los .CSV
+
+Se eliminaron las columnas ID de los archivos CSV ya que en la base de datos las claves primarias están definidas como IDENTITY (autoincrementales).
+Esto permite evitar conflictos durante la carga de datos y asegura que SQL Server genere los identificadores automáticamente.
