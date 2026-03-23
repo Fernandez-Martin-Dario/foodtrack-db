@@ -48,3 +48,15 @@ El proyecto se encuentra versionado con Git y alojado en GitHub, permitiendo lle
 
 Se eliminaron las columnas ID de los archivos CSV ya que en la base de datos las claves primarias están definidas como IDENTITY (autoincrementales).
 Esto permite evitar conflictos durante la carga de datos y asegura que SQL Server genere los identificadores automáticamente.
+
+## Orden de carga de datos
+
+Debido a las relaciones entre tablas (claves foráneas), los archivos CSV deben importarse en el siguiente orden:
+
+1- Foodtruck
+2- Productos
+3- Locacion
+4- Ordenes
+5- Detalle_Ordenes
+
+Esto garantiza que las tablas que contienen claves foráneas encuentren previamente los registros necesarios en las tablas padre.
